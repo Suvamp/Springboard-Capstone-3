@@ -32,7 +32,7 @@ The Johns Hopkins dataset from Kaggle. This dataset is real and is curated from 
 
 * **Step 2:**  Created Choroplethmaps and ranking for all the cases (confirmed, recovered, deaths, active) and their density globally.
 
-  ** **Confirmed**
+  - **Confirmed**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed.PNG)
 
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed.PNG)
