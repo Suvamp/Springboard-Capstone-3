@@ -32,6 +32,32 @@ The Johns Hopkins dataset from Kaggle. This dataset is real and is curated from 
 
 * **Step 2:**  Created Choroplethmaps and ranking for all the cases (confirmed, recovered, deaths, active) and their density globally.
   ** **Confirmed**
-![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed.PNG)
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed.PNG)
 
-![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed.PNG)
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed.PNG)
+  
+  ** **Confirmed per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed%20per%20million.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed%20per%20million.PNG)
+  
+  ** **Deaths**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20deaths.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20deaths.PNG)
+  
+  ** **Deaths per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20deaths%20per%20million.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20deaths%20per%20million.PNG)
+  
+  ** **Recovered**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20recovered.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20recovered.PNG)
+  
+  ** **Recovered per Million**
+  
+  ** **Active**
+  
+  ** **Active per Million**
