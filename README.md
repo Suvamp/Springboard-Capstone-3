@@ -109,5 +109,32 @@ The Johns Hopkins dataset from Kaggle. This dataset is real and is curated from 
 
 ### **5. Modelling**
 * The Modelling step really focuses on preparing the data for forecasting. 
+
 * Step 1:
   - The dataset was split into a training and validation dataset. Then the original dataset was split halfways and was used for a walk-forward validation, which uses the      training dataset to predict and the testing dataset to observe. 
+  
+* Step 2:
+  - The training dataset was used to create a persistence model. Like the last step it was split halfways in a training set and test set. After the predictions were made, the model observed a RMSE of 28464.926, meaning that on average, the model was wrong by about 28465 confirmed cases for each prediction made. It may not seem like a big number, but it is a big error for such a weak model
+
+* Step 3:
+  - I manually configured the ARIMA model to check the stationarity of the training dataset.
+  - After the configuration I found that the test statistic value -0.497328 is greater than the critical value at 5% of -2.881. Thus, we can reject the null hypothesis, meaning that the time series is non-stationary. It also makes sense that the time series is non-stationary since the data is not random and it has a high autocorrelation.
+  
+  ![](Capstone%203%20(Modeling)/Test%20Statistic.PNG)
+ 
+* Step 4:
+  - I ended up using Grid Search to find the optimal hyperparameters to be used in my ARIMA model for forecasting and found the best hyperparameter to be ARIMA(6, 2, 0) with a RMSE of 3230.321.
+  - I also reviewed the residual errors.
+
+* Step 5:
+  - I used the Box-Cox transform to perform square root and log transforms and automatically optimize the transform for a dataset.
+  
+  ![](Capstone%203%20(Modeling)/Box%20Cox.PNG)
+  
+ * Step 6:
+  - This entire step is getting the data ready for forecasting.
+  - I finalized the model by applying ARIMA on the transformed data with an order of (6, 2, 0). Then I saved the model into separate datasets.
+  - I made a prediction from the training dataset. The prediction was made for the next day and it was 2847059.243. This value was then used to compare with the first value in the validation dataset to check how accurate the prediction was.
+  - I validated the model by checking the first value which was 2839436. The RMSE was 8102.135. So, it was not too far off and the predictions made from the training dataset almost matched up with the data from the validation dataset which means the model performed well.
+
+  ![](Capstone%203%20(Modeling)/Prediction.PNG)
