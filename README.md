@@ -32,33 +32,82 @@ The Johns Hopkins dataset from Kaggle. This dataset is real and is curated from 
 
 * **Step 2:**  Created Choroplethmaps and ranking for all the cases (confirmed, recovered, deaths, active) and their density globally.
 
-  > **Confirmed**
+  - **Confirmed**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed.PNG)
 
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed.PNG)
   
-  ** **Confirmed per Million**
+  - **Confirmed per Million**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20confirmed%20per%20million.PNG)
   
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20confirmed%20per%20million.PNG)
   
-  ** **Deaths**
+  - **Deaths**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20deaths.PNG)
   
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20deaths.PNG)
   
-  ** **Deaths per Million**
+  - **Deaths per Million**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20deaths%20per%20million.PNG)
   
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20deaths%20per%20million.PNG)
   
-  ** **Recovered**
+  - **Recovered**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20recovered.PNG)
   
   ![](Capstone%203%20(EDA)/Rank%20map%20of%20recovered.PNG)
   
-  ** **Recovered per Million**
+  - **Recovered per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20recovered%20per%20million.PNG)
   
-  ** **Active**
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20recovered%20per%20million.PNG)
   
-  ** **Active per Million**
+  - **Active**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20active.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20active.PNG)
+  
+  - **Active per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20active%20per%20million.PNG)
+  
+  ![](Capstone%203%20(EDA)/Rank%20map%20of%20active%20per%20million.PNG)
+
+* **Step 3:** Created Time Series Plots to visualize the Top 10 US states with the most confirmed, deaths, and recovered.
+
+![](Capstone%203%20(EDA)/Time%20Series%20of%20Top%2010%20US%20States%20confirmed.PNG)
+
+![](Capstone%203%20(EDA)/Time%20Series%20of%20Top%2010%20US%20States%20deaths.PNG)
+
+* **Step 4:** Created Choroplethmaps and ranking for all the cases (confirmed, recovered, deaths, active) and their density for US States.
+  - **Confirmed**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20US%20states%20confirmed.PNG)
+  
+  - **Confirmed per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20US%20states%20confirmed%20per%20million.PNG)
+  
+  ![](Capstone%203%20(EDA)/US%20states%20rank%20map%20confirmed.PNG)
+  
+  - **Deaths**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20US%20states%20deaths.PNG)
+  
+  - **Deaths per Million**
+  ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20US%20states%20deaths%20per%20million.PNG)
+  
+  ![](Capstone%203%20(EDA)/US%20states%20rank%20map%20deaths.PNG)
+
+### **4. Data Preprocessing**
+* For this step, I created a dataframe containing confirmed cases for the US from the larger dataset and I also created date time features and lag features which are some classical ways of transforming a time series forecasting problems into supervised learning problems. However, I used the classical approach of using an ARIMA model since machine learning for time series analysis and forecasting is a highly time-consuming method. The datetime features and lag features are basically like creating dummy variables for time series analysis. I also created an expanding windows feature. I did some visualization by creating line plots, a histogram, and a density plot.
+* I also created box and whisker plots and heat maps. I did this by monthly interval and daily interval for the month of September. 
+* I also created a Lag Scatter plot. It’s linear characteristic shows that the data is not random and has high autocorrelation.
+
+![](Capstone%203%20(Data%20Preprocessing)/Lag%20Scatter%20Plot.PNG)
+
+* I also created an autocorrelation plot to see the correlation of the data for each day. Although it shows a decreasing correlation in the first couple of months, the line plot shows that the data was stationary for the first couple of months.
+* I also decomposed the time series to identify any trends with the data. There seems to be no trend since there is only a year of data available and it’s a virus. Most of the actions are taken to reduce the virus.
+
+![](Capstone%203%20(Data%20Preprocessing)/Seasonal%20Decompose.PNG)
+
+### **5. Modelling**
+* The Modelling step really focuses on preparing the data for forecasting. 
+* Step 1:
+  - The dataset was split into a training and validation dataset. Then the original dataset was split halfways and was used for a walk-forward validation, which uses the      training dataset to predict and the testing dataset to observe. 
