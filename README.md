@@ -78,7 +78,7 @@ The Johns Hopkins dataset from Kaggle. This dataset is real and is curated from 
 
 ![](Capstone%203%20(EDA)/Time%20Series%20of%20Top%2010%20US%20States%20deaths.PNG)
 
-* **Step 4:** Created Choroplethmaps and ranking for all the cases (confirmed, recovered, deaths, active) and their density for US States.
+* **Step 4:** Created Choroplethmaps and ranking for all the cases (confirmed and deaths) and their density for US States.
   - **Confirmed**
   ![](Capstone%203%20(EDA)/Choropleth%20map%20of%20US%20states%20confirmed.PNG)
   
